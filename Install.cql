@@ -1,0 +1,17 @@
+CREATE CONSTRAINT ON (s:Sample) ASSERT s.sampleId IS UNIQUE;
+
+CREATE INDEX ON :Analysis(worklistId);
+CREATE INDEX ON :Analysis(seqId);
+CREATE INDEX ON :Analysis(assay);
+
+CREATE CONSTRAINT ON (v:Variant) ASSERT v.variantId IS UNIQUE;
+CREATE CONSTRAINT ON (v:Variant) ASSERT v.dbSnpId IS UNIQUE;
+
+CREATE CONSTRAINT ON (sy:Symbol) ASSERT sy.symbolId IS UNIQUE;
+
+CREATE CONSTRAINT ON (f:Feature) ASSERT f.featureId IS UNIQUE;
+CREATE INDEX ON :Feature(ccdsId);
+
+CREATE CONSTRAINT ON (p:Panel) ASSERT p.panelId IS UNIQUE;
+
+CREATE CONSTRAINT ON (u:User) ASSERT u.userId IS UNIQUE;
