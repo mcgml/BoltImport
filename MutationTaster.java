@@ -1,6 +1,6 @@
-package nhs.genetics.cardiff.framework;
+package nhs.genetics.cardiff;
 
-import nhs.genetics.cardiff.GenomeVariant;
+import nhs.genetics.cardiff.framework.GenomeVariant;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;

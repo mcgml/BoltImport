@@ -1,11 +1,11 @@
-package nhs.genetics.cardiff.boltimport;
+package nhs.genetics.cardiff;
 
 import htsjdk.variant.variantcontext.Allele;
 import htsjdk.variant.variantcontext.Genotype;
 import htsjdk.variant.variantcontext.VariantContext;
 import htsjdk.variant.vcf.VCFFileReader;
 import htsjdk.variant.vcf.VCFHeaderLine;
-import nhs.genetics.cardiff.GenomeVariant;
+import nhs.genetics.cardiff.framework.GenomeVariant;
 import org.neo4j.driver.v1.*;
 
 import java.io.File;

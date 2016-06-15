@@ -1,13 +1,10 @@
-package nhs.genetics.cardiff.boltimport;
+package nhs.genetics.cardiff;
 
 import htsjdk.tribble.readers.LineIteratorImpl;
 import htsjdk.tribble.readers.LineReaderUtil;
 import htsjdk.variant.variantcontext.VariantContext;
 import htsjdk.variant.vcf.VCFCodec;
-import nhs.genetics.cardiff.GenomeVariant;
-import nhs.genetics.cardiff.framework.annotation.vep84.Domain;
-import nhs.genetics.cardiff.framework.annotation.vep84.TranscriptConsequence;
-import nhs.genetics.cardiff.framework.annotation.vep84.VEPRecord;
+import nhs.genetics.cardiff.framework.GenomeVariant;
 import org.neo4j.driver.v1.*;
 
 import java.io.BufferedReader;

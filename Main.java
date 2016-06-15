@@ -1,6 +1,5 @@
-package nhs.genetics.cardiff.boltimport;
+package nhs.genetics.cardiff;
 
-import nhs.genetics.cardiff.framework.annotation.vep84.VEPWrapper;
 import org.neo4j.driver.v1.Driver;
 import org.neo4j.driver.v1.GraphDatabase;
 

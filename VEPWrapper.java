@@ -1,7 +1,7 @@
 package nhs.genetics.cardiff;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import nhs.genetics.cardiff.GenomeVariant;
+import nhs.genetics.cardiff.framework.GenomeVariant;
 
 import java.io.*;
 import java.util.ArrayList;
