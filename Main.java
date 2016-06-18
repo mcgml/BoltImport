@@ -19,7 +19,7 @@ import java.util.logging.Logger;
 public class Main {
 
     private static final Logger log = Logger.getLogger(Main.class.getName());
-    private static final String version = "1.0.1";
+    private static final String version = "1.0.2";
     private static File variantVcfFile = null, blacklistVcfFile = null;
     private static boolean annotateQueuedVariants = false;
     private static Integer threads;
