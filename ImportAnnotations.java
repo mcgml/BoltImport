@@ -51,6 +51,8 @@ public class ImportAnnotations {
 
         }
 
+        //TODO sort variants by genomic location for faster VEP annotations
+
         log.log(Level.INFO, "Found " + genomeVariants.size() + " variants for annotation");
 
         return genomeVariants;
@@ -63,10 +65,15 @@ public class ImportAnnotations {
             GenomeVariant genomeVariant = convertVepInputToGenomeVariant(vepRecord.getInput());
 
             try (Session session = driver.session()) {
-                session.run("MATCH (v:Variant {variantId:{variantId}}) SET v.mostSevereConsequence = {mostSevereConsequence};",
+                session.run("MATCH (v:Variant {variantId:{variantId}}) SET v.mostSevereConsequence = {mostSevereConsequence}, v.gerp = {gerp}, v.phastcons = {phastcons}, v.phylop = {phylop}, v.variantClass = {variantClass};",
                         Values.parameters(
                                 "variantId", genomeVariant.toString(),
-                                "mostSevereConsequence",vepRecord.getMostSevereConsequence())
+                                "mostSevereConsequence",vepRecord.getMostSevereConsequence(),
+                                "gerp", vepRecord.getTranscriptConsequences()[0].getGerp(),
+                                "phylop", vepRecord.getTranscriptConsequences()[0].getPhylop(),
+                                "phastcons", vepRecord.getTranscriptConsequences()[0].getPhastcons(),
+                                "variantClass", vepRecord.getVariantClass()
+                        )
                 );
             }
 

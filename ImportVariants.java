@@ -160,11 +160,12 @@ public class ImportVariants {
                         try (Session session = driver.session()) {
                             session.run("MATCH (s:Sample {sampleId:{sampleId}})-[:HAS_DATA]->(a:Dataset {seqId:{seqId}}) " +
                                     "MERGE (v:Variant {variantId:{variantId}}) ON CREATE SET v :Annotate " +
-                                    "CREATE UNIQUE (a)-[rel:HAS_HOM_VARIANT {gtQuality:{GQ}}]->(v)", Values.parameters(
+                                    "CREATE UNIQUE (a)-[rel:HAS_HOM_VARIANT {gtQuality:{GQ}, quality:{quality}}]->(v)", Values.parameters(
                                     "sampleId", genotype.getSampleName(),
                                     "seqId", metaData.get(genotype.getSampleName()).get("SeqId"),
                                     "variantId", genomeVariant.toString(),
-                                    "GQ", genotype.getGQ())
+                                    "GQ", genotype.getGQ(),
+                                    "quality", variantContext.getPhredScaledQual())
                             );
                         }
 

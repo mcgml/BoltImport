@@ -78,6 +78,7 @@ public class TranscriptConsequence {
     private Integer distance, strand;
     private Domain[] domains;
     private Boolean canonical;
+    private Double gerp, phylop, phastcons;
 
     public TranscriptConsequence(){
 
@@ -115,7 +116,6 @@ public class TranscriptConsequence {
             return null;
         }
     }
-
 
     public String getGeneId() {
         return geneId;
@@ -395,5 +395,29 @@ public class TranscriptConsequence {
 
     public void setCanonical(Boolean canonical) {
         this.canonical = canonical;
+    }
+
+    public Double getGerp() {
+        return gerp;
+    }
+
+    public void setGerp(Double gerp) {
+        this.gerp = gerp;
+    }
+
+    public Double getPhylop() {
+        return phylop;
+    }
+
+    public void setPhylop(Double phylop) {
+        this.phylop = phylop;
+    }
+
+    public Double getPhastcons() {
+        return phastcons;
+    }
+
+    public void setPhastcons(Double phastcons) {
+        this.phastcons = phastcons;
     }
 }

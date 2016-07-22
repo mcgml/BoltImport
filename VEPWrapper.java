@@ -31,6 +31,7 @@ public class VEPWrapper {
     }
 
     /**
+     * Requires bigWigToWig in PATH
      * @throws IOException Could not deserialize VEP output
      * @throws InterruptedException Could not run VEP
      * */
@@ -58,6 +59,12 @@ public class VEPWrapper {
                     "--no_stats",
                     "--no_escape",
                     "--no_intergenic",
+                    "-custom",
+                    "/Users/ml/Documents/Projects/BoltImport/All_hg19_RS.bw,gerp,bigwig",
+                    "-custom",
+                    "/Users/ml/Documents/Projects/BoltImport/hg19.100way.phyloP100way.bw,phylop,bigwig",
+                    "-custom",
+                    "/Users/ml/Documents/Projects/BoltImport/hg19.100way.phastCons.bw,phastcons,bigwig",
                     "--fork",
                     String.valueOf(threads),
                     "-o",

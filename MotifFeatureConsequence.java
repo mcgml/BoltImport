@@ -29,6 +29,7 @@ public class MotifFeatureConsequence {
     private Integer motifPos;
 
     private String impact;
+    private Double phylop, phastcons, gerp;
     private Integer strand;
 
     public MotifFeatureConsequence(){
@@ -105,5 +106,29 @@ public class MotifFeatureConsequence {
 
     public void setStrand(Integer strand) {
         this.strand = strand;
+    }
+
+    public Double getPhylop() {
+        return phylop;
+    }
+
+    public void setPhylop(Double phylop) {
+        this.phylop = phylop;
+    }
+
+    public Double getPhastcons() {
+        return phastcons;
+    }
+
+    public void setPhastcons(Double phastcons) {
+        this.phastcons = phastcons;
+    }
+
+    public Double getGerp() {
+        return gerp;
+    }
+
+    public void setGerp(Double gerp) {
+        this.gerp = gerp;
     }
 }

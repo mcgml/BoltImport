@@ -82,4 +82,12 @@ public class RegulatoryFeatureConsequence {
     public void setImpact(String impact) {
         this.impact = impact;
     }
+
+    public Double getPhastcons() {
+        return phastcons;
+    }
+
+    public void setPhastcons(Double phastcons) {
+        this.phastcons = phastcons;
+    }
 }
