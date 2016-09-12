@@ -239,8 +239,11 @@ public class ImportAnnotations {
             while(lineIteratorImpl.hasNext()) {
                 VariantContext variantContext = codec.decode(lineIteratorImpl.next());
 
+                if (!variantContext.hasAttribute("CLNSIG") || !variantContext.hasAttribute("CLNALLE")) {
+                    continue;
+                }
+
                 if (variantContext.getAttribute("CLNALLE") instanceof String) {
-                    if (variantContext.getAttribute("CLNSIG") == null) continue; //not always present
 
                     int clinAllele = Integer.parseInt((String) variantContext.getAttribute("CLNALLE"));
                     if (clinAllele == -1) continue; //A value of -1 indicates that no allele was found to match a corresponding HGVS allele name
@@ -267,9 +270,11 @@ public class ImportAnnotations {
                     }
 
                 } else if (variantContext.getAttribute("CLNALLE") instanceof ArrayList) {
-                    if (variantContext.getAttribute("CLNSIG") == null) continue; //not always present
 
+                    @SuppressWarnings (value="unchecked")
                     ArrayList<String> clinSigs = (ArrayList<String>) variantContext.getAttribute("CLNSIG");
+
+                    @SuppressWarnings (value="unchecked")
                     ArrayList<String> clinAlleles = (ArrayList<String>) variantContext.getAttribute("CLNALLE");
 
                     for (int n = 0; n < clinAlleles.size(); ++n){
